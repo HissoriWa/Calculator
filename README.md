@@ -15,6 +15,7 @@
 初期位置と目的地のx座標を指定し、マリオが4種類の地面移動(左右+Y有無)と3種類の減速(立ち、前後しゃがみ)で目的地に到達できる操作を探索します。
 SubpixelがOnのときはサブピクセルパーフェクト、そうでなければ針の左右と同じ猶予を許します。
 
+
 上にある機能から順番に説明しています。わからないものは読んでください。
 <dl>
 <dt>Input/Get as hex</dt>
@@ -38,7 +39,7 @@ SubpixelがOnのときはサブピクセルパーフェクト、そうでなけ�
 <dt>Calculate!</dt>
 <dd>結果(最終x, y座標・速度と針に当たったかどうか)を表示します。</dd>
 <dt>Spike Positionやその周辺</dt>
-<dd>Spike Positionに追加・撤去したい針・地面の座標(x, yの順。画面の白文字が座標)を入力し、Add/Erace Spikes/Groundsを押し、Calculate!を実行するとその地点の針・地面が追加・撤去できます。Erace All...ですべて(Groundsは初期除き)消せます。x y x y ...のように同時に複数個の針を指定できます。</dd>
+<dd>Spike Positionに追加・撤去したい針・地面の座標(x, yの順。画面の白文字が座標)を入力し、Add/Erace Spikes/Groundsを押し、Calculate!を実行するとその地点の針・地面が追加・撤去できます。Erace All...ですべて(Groundsは初期位置除き)消せます。x y x y ...のように同時に複数個の針を指定できます。</dd>
 
 >Find Setupsモード
 <dt>Target point</dt>
