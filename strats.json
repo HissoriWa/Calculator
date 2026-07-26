@@ -1,0 +1,138 @@
+{
+    "Vine TJ": {
+        "pos_x": "106.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightJump 24 Left 12 Airbone 27"
+    },
+    "Vertical TJ": {
+        "pos_x": "97.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightWalk 10 RightJump 18 Left 14 "
+    },
+    "0-Block-High Fastest TJ": {
+        "pos_x": "64.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 31 AccRightJump 1 AccRight 2 Airbone 2 Left 21 Airbone 9 "
+    },
+    "6-Distance Hillary": {
+        "pos_x": "74.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 7 AccRightJump 1 AccLeftJump 8 "
+    },
+    "15-Distance Hillary": {
+        "pos_x": "65.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 13 AccRightJump 1 AccLeftJump 12 "
+    },
+    "2-Block-Distance TJ": {
+        "pos_x": "64",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "Jump 2 AccRightJump 22 Jump 2 Left 16 "
+    },
+    "4-Block-High Vertical TJ": {
+        "pos_x": "23.6",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 30 AccRightJump 20 AccLeftJump 26 "
+    },
+    "2-Block SideTJ": {
+        "pos_x": "0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 65 FrontDuck 1 AccRightJump 7 AccRight 2 AccRightJump 4 AccRight 3 AccRightJump 15 "
+    },
+    "Fixable TJ (0-Block-High)": {
+        "pos_x": "63.9",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightWalk 5 FrontDuck 100 AccRightJump 36 AccLeftJump 22 "
+    },
+    "Fixable TJ (2-Block-High)": {
+        "pos_x": "64.1",
+        "spd_x": "0.0",
+        "pos_y": "35.33",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "Jump 50 AccRightJump 4 FrontDuck 10 AccRightJump 30 AccLeftJump 20 "
+    },
+    "Abyss": {
+        "pos_x": "96.1",
+        "spd_x": "0.0",
+        "pos_y": "80.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "LeftWalk 1 Stand 10 RightWalk 1 FrontDuck 10 LeftWalk 1 FrontDuck 1 Jump 1 AccRightJump 20 AccRight 2 AccRightJump 45 "
+    },
+    "Abyss (Slippy)": {
+        "pos_x": "96.0",
+        "spd_x": "0.0",
+        "pos_y": "80.85",
+        "spd_y": "0.0",
+        "scene": "Ice",
+        "action": "Right 1 Left 1 LeftWalk 2 Jump 1 AccRightJump 20 AccRight 2 AccRightJump 50 "
+    },
+    "0.1-Distance TJ (Unverified)": {
+        "pos_x": "128.1",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "Left 2 Right 4 Left 3 Airbone 1 Right 1 "
+    },
+    "1.5-Block-0.1-Distance TJ": {
+        "pos_x": "87.9",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "AccRightJump 20 AccLeftJump 16 Jump 1 AccRightJump 1 Jump 21 "
+    },
+    "Non-Fastest Aya": {
+        "pos_x": "64.0",
+        "spd_x": "0.0",
+        "pos_y": "32.0",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightRun 32 AccRightJump 14 AccRight 15 AccLeft 2 Jump 2 AccLeft 7 AccRight 4 RightRun 3 "
+    },
+    "From-2-Spd TJ": {
+        "pos_x": "0.0",
+        "spd_x": "2.0",
+        "pos_y": "160.0",
+        "spd_y": "-3",
+        "scene": "Normal",
+        "action": "Airbone 5 AccLeft 22  AccRight 2  Airbone 2 AccLeft 2 "
+    },
+    "Withered Raspberry": {
+        "pos_x": "144",
+        "spd_x": "0.0",
+        "pos_y": "80",
+        "spd_y": "0.0",
+        "scene": "Normal",
+        "action": "RightWalk 1 Stand 10 LeftWalk 1 FrontDuck 10 Jump 10 AccLeftJump 1 AccRightJump 10 AccRight 2 AccRightJump 10 Jump 10 AccLeft 3 Right 4 AccLeft 8 Airbone 1 Left 5 Airbone 1 Left 1 "
+    }
+}
