@@ -13,7 +13,7 @@
 <dt>Input/Get as hex</dt>
 <dd>x Pos, x Spd, y Pos, y Spd, 計算結果を16進数で設定・表示できます。</dd>
 <dt>x Pos, x Spd, y Pos, y Spd</dt>
-<dd>マリオの座標です。***1 Block = 16*** とする単位です。</dd>
+<dd>マリオの座標です。**1 Block = 16** とする単位です。</dd>
 <dt>Width, Height</dt>
 <dd>画面のブロック数です。あまり大きいと縮小表示されます(streamlit側の仕様)。</dd>
 <dt>Trail, Duck</dt>
