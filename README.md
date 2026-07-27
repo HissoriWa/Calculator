@@ -22,7 +22,7 @@
 
 上にある機能から順番に説明しています。わからないものは読んでください。  
 **Input/Get as hex**  
-  x Pos, x Spd, y Pos, y Spd, 計算結果を16進数で設定・表示できます。  
+  x Pos, x Spd, y Pos, y Spd, 計算結果を16進数で設定・表示できます。連打したりモードと異なる型で数値入力をしたりすると狂います。やめてください。  
 **x Pos, x Spd, y Pos, y Spd**  
   マリオの座標です。1 Block = 16とする単位です。  
 **Width, Height**  
