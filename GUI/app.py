@@ -345,7 +345,7 @@ charas_gray_half = {
 if st.session_state.background is None:
     describe()
 
-col1, col2, col3, col4 = st.columns([3, 1, 1])
+col1, col2, col3 = st.columns([3, 1, 1])
 with col1:
     pos_input = st.text_input('Spike Position')
 with col2:
