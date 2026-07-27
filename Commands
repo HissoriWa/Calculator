@@ -1,0 +1,2 @@
+	'Airbone': (0, 1, 1),'Right': (1, 1, 1), 'Left': (1, -1, 1), 'AccRight': (2, 1, 1), 'AccLeft': (2, -1, 1), 'RightWalk': (3, 1, 2), 'LeftWalk': (3, -1, 2), 'RightRun': (4, 1, 2), 'LeftRun': (4, -1, 2), 'Stand': (51, 0, 2), 'FrontDuck': (52, 0, 3), 'BackDuck': (53, 0, 3),\
+	'RightJump': (101, 1, 1), 'LeftJump': (101, -1, 1), 'AccRightJump': (102, 1, 1), 'AccLeftJump': (102, -1, 1), 'RightBufferJump': (103, 1, 1), 'LeftBufferJump': (103, -1, 1), 'AccRightBufferJump': (104, 1, 1), 'AccLeftBufferJump': (104, -1, 1), 'Jump': (150, 1, 1)\
