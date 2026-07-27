@@ -1,0 +1,30 @@
+(Midair)
+Airbone
+Right
+Left
+AccRight
+AccLeft
+
+(Midair or Ground)
+Jump
+RightJump
+LeftJump
+AccRightJump
+AccLeftJump
+RightBufferJump
+LeftBufferJump
+AccRightBufferJump
+AccLeftBufferJump
+
+(Ground)
+RightWalk
+LeftWalk
+RightRun
+LeftRun
+Stand
+FrontDuck
+BackDuck
+
+(諸注意)
+Command Frame Command Frame...の順で入力してください。例: RightRun 13 FrontDuck 30 LeftRun 1 FrontDuck 10
+JXMai氏のCalculatorで再現されていないもの、再現されているものの一部=上記操作に存在しないものは対応していません。
