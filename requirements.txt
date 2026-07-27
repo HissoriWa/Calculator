@@ -1,8 +1,8 @@
-numpy==2.5.1
-pandas==3.0.3
-pillow==12.3.0
-pyperclip==1.11.0
-streamlit==1.59.1
-altair==6.2.2
-pyarrow==5.0.0
-requests==2.34.2
+numpy
+pandas
+pillow
+pyperclip
+streamlit
+altair
+pyarrow
+requests
