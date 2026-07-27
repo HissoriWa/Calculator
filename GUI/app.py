@@ -72,10 +72,10 @@ def describe():
 
         if i == len(p_x) - 1 or i == 0 or coms[i] != coms[i + 1]:
             chara = charas[pose[i][0]] if not Dead else charas_gray[pose[i][0]]
-            st.session_state.background.paste((chara), (int(p_x[i] * 5), int((height - 1)* 16 - p_y[i] + 2) * 5), chara)
+            st.session_state.background.paste((chara), (int(p_x[i] * 5), int((height - 1)* 16 - p_y[i] + 1) * 5), chara)
         elif trail:
             chara = charas_half[pose[i][0]] if not Dead else charas_gray_half[pose[i][0]]
-            st.session_state.background.paste((chara), (int(p_x[i] * 5), int((height - 1)* 16 - p_y[i] + 2) * 5), chara)
+            st.session_state.background.paste((chara), (int(p_x[i] * 5), int((height - 1)* 16 - p_y[i] + 1) * 5), chara)
 
     if st.session_state.hex:
         for array in (p_x, s_x, p_y, s_y):
