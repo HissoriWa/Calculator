@@ -19,37 +19,35 @@
 >ボタン等の説明
 
 上にある機能から順番に説明しています。わからないものは読んでください。
-<dl>
-<dt>Input/Get as hex</dt>
-<dd>x Pos, x Spd, y Pos, y Spd, 計算結果を16進数で設定・表示できます。</dd>
-<dt>x Pos, x Spd, y Pos, y Spd</dt>
-<dd>マリオの座標です。1 Block = 16とする単位です。</dd>
-<dt>Width, Height</dt>
-<dd>画面のブロック数です。あまり大きいと縮小表示されます(streamlit側の仕様)。</dd>
-<dt>Skin, BackGround</dt>
-<dd>見た目を指定できます。適当に作ったのでこれはあまり信頼しないでください。</dd>
-<dt>Condition</dt>
-<dd>夜雪、夜空、スターなど状態異常を設定できます(夜砂漠=Windは適当に作ったので、これも信頼しないでください)。</dd>
-<dt>Trail, Duck</dt>
-<dd>TrailがOnのときは、操作の切り替えの時以外もマリオの軌跡が薄く表示されます。DuckがOnのときは常にしゃがみます。</dd>
-<dt>Setups, Load the Setup</dt>
-<dd>あらかじめ用意されたセットアップのロードができます。隣のAdd...などは制作に用いただけなので無視してください。</dd>
-<dt>Enter in JXMai Format</dt>
-<dd>Onのとき、JXMai氏のCalculatorと同じフォーマットでCommandsの入力が可能です(こちらが追加していない操作は使えません)。</dd>
-<dt>Commands</dt>
-<dd>決められたフォーマットで入力後、Calculateを押すことで結果が表示されます。</dd>
-<dt>Calculate!</dt>
-<dd>結果(最終x, y座標・速度と針に当たったかどうか)を表示します。</dd>
-<dt>Spike Positionやその周辺</dt>
-<dd>Spike Positionに追加・撤去したい針・地面の座標(x, yの順。画面の白文字が座標)を入力し、Add/Erace Spikes/Groundsを押し、Calculate!を実行するとその地点の針・地面が追加・撤去できます。Erace All...ですべて(Groundsは初期位置除き)消せます。x y x y ...のように同時に複数個の針を指定できます。</dd>
+**Input/Get as hex**
+  x Pos, x Spd, y Pos, y Spd, 計算結果を16進数で設定・表示できます。
+**x Pos, x Spd, y Pos, y Spd**
+  マリオの座標です。1 Block = 16とする単位です。
+**Width, Height**
+  画面のブロック数です。あまり大きいと縮小表示されます(streamlit側の仕様)。
+**Skin, BackGround**
+  見た目を指定できます。適当に作ったのでこれはあまり信頼しないでください。
+**Condition**
+  夜雪、夜空、スターなど状態異常を設定できます(夜砂漠=Windは適当に作ったので、これも信頼しないでください)。
+**Trail, Duck**
+  TrailがOnのときは、操作の切り替え時以外もマリオの軌跡が薄く表示されます。DuckがOnのときは常にしゃがみます。
+**Setups, Load the Setup**
+  あらかじめ用意されたセットアップのロードができます。隣のAdd...などは制作に用いただけなので無視してください。
+**Enter in JXMai Format**
+  Onのとき、JXMai氏のCalculatorと同じフォーマットでCommandsの入力が可能です(こちらが追加していない操作は使えません)。
+**Commands**
+  決められたフォーマットで入力後、Calculateを押すことで結果が表示されます。
+**Calculate!**
+  結果(最終x, y座標・速度と針に当たったかどうか)を表示します。
+**Spike Positionやその周辺**
+  Spike Positionに追加・撤去したい針・地面の座標(x, yの順。画面の白文字が座標)を入力し、Add/Erace Spikes/Groundsを押し、Calculate!を実行するとその地点の針・地面が追加・撤去できます。Erace All...ですべて(Groundsは初期位置除き)消せます。x y x y ...のように同時に複数個の針を指定できます。
 
 >Find Setupsモード
-<dt>Target point</dt>
-<dd>目標地点のx座標です。</dd>
-<dt>Difficulty</dt>
-<dd>操作の切り替え回数です。大きいほど処理が重くなります。</dd>
-<dt>Lim Frames</dt>
-<dd>方向キーを押しているフレーム数の最大です。大きいほど処理が重くなります。</dd>
-<dt>Search!</dt>
-<dd>探索を実行します。処理能力が低いため、動かなくなることが多いです。</dd>
-</dl>
+**Target point**
+  目標地点のx座標です。
+**Difficulty**
+  操作の切り替え回数です。大きいほど処理が重くなります。
+**Lim Frames**
+  方向キーを押しているフレーム数の最大です。大きいほど処理が重くなります。
+**Search!**
+  探索を実行します。処理能力が低いため、動かなくなることが多いです。
