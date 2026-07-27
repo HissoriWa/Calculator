@@ -345,16 +345,10 @@ charas_gray_half = {
 if st.session_state.background is None:
     describe()
 
-col1, col2, col3, col4 = st.columns([2, 5, 2, 2])
+col1, col2, col3, col4 = st.columns([3, 1, 1])
 with col1:
-    if mode == 'Calculate':
-        if st.button('Calculate!', on_click = describe):
-            st.session_state.clicked = True
-    elif st.button('Search!'):
-        search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
-with col2:
     pos_input = st.text_input('Spike Position')
-with col3:
+with col2:
     if st.button('Add Spikes'):
         spike_arranged = ' '.join(pos_input.split())
         st.session_state.spike_pos += ' ' + pos_input
@@ -380,7 +374,7 @@ with col3:
         st.session_state.spike_pos = ''
         pos_input = ''
 
-with col4:
+with col3:
     if st.button('Add Grounds'):
         ground_arranged = ' '.join(pos_input.split())
         st.session_state.ground_pos += ' ' + pos_input
@@ -434,6 +428,11 @@ elif mode == 'Find setups':
         IfSubp = st.checkbox('Subpixel')
 st.write(st.session_state.result)
 
+if mode == 'Calculate':
+    if st.button('Calculate!', on_click = describe):
+        st.session_state.clicked = True
+elif st.button('Search!'):
+    search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
 
 st.image(st.session_state.background, width = 'content')
 st.write(st.session_state.df)
