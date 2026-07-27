@@ -314,6 +314,12 @@ elif mode == 'Find setups':
     st.session_state.commands = ''
     with col1:
         tar = st.text_input('Target point')
+        if tar:
+            if st.session_state.hex:
+                try:
+                    tar = str(to32(tar))
+                except ValueError:
+                    st.error('Enter in Correct Format!')
     with col2:
         switch = st.number_input('Difficulty', value = 3)
     with col3:
