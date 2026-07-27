@@ -442,10 +442,10 @@ st.write(st.session_state.df)
 
 try:
     with st.expander('About This App'):
-        with open(BASE.parent / 'Readme.md') as f:
+        with open(BASE.parent / 'README.md') as f:
             st.markdown(f.read())
 except FileNotFoundError:
-    st.error('Readme Not Found')
+    st.error('README.md Not Found')
 
 try:
     with st.expander('LICENSE'):
