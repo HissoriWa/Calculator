@@ -162,7 +162,7 @@ def tof(value):
 
 def Calculate_x(pos_x, speed, inputs, scene):
 	pos_x = tof(pos_x)
-	speed = tof(speed)
+	speed = tof(float(speed) - 1) if scene == Wind else tof(float(speed))
 	scene = Scenes.get(scene, Normal)
 	border = Borders_x[scene]
 	spd_x_his = [speed]
@@ -200,9 +200,9 @@ def Calculate_x(pos_x, speed, inputs, scene):
 						speed = tof(float(speed) + a[zone] * float(direction))
 					if abs(speed) > maximum and speed * direction > 0:
 						speed = tof(maximum) if speed > 0 else np.float32(-maximum)
-			speed = tof(float(speed))
+			speed = tof(float(speed) + 1) if scene == Wind else tof(float(speed))
 			spd_x_his.append(speed)
-			pos_x = tof(float(pos_x) + float(speed) + 1) if scene == Wind else tof(float(pos_x + float(speed)))
+			pos_x = tof(float(pos_x + float(speed)))
 			pos_x_his.append(pos_x)
 	return pos_x_his, spd_x_his
 
