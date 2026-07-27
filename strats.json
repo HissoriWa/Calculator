@@ -95,7 +95,7 @@
         "scene": "Ice",
         "action": "Right 1 Left 1 LeftWalk 2 Jump 1 AccRightJump 20 AccRight 2 AccRightJump 50 "
     },
-    "0.1-Distance TJ (Unverified)": {
+    "0.1-Distance TJ": {
         "pos_x": "128.1",
         "spd_x": "0.0",
         "pos_y": "32.0",
