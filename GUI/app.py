@@ -304,31 +304,7 @@ with col2:
         st.button('Load the Setup', on_click = load_callback)
     with col4:
         st.button('Add the Setup', on_click = add_callback, disabled=True)
-
-           
-    
-if mode == 'Calculate':
-    ph = 'Example: LeftJump 2 RightJump 4 LeftJump 2' if not st.session_state.IfJXMai else 'Example: 左跳2 右跳4 左跳2'
-    st.text_area(label ='Commands', placeholder = ph, key = 'commands')
-elif mode == 'Find setups':
-    col1, col2, col3, col4 = st.columns(4)
-    st.session_state.commands = ''
-    with col1:
-        tar = st.text_input('Target point')
-        if tar:
-            if st.session_state.hex:
-                try:
-                    tar = str(to32(tar))
-                except ValueError:
-                    st.error('Enter in Correct Format!')
-    with col2:
-        switch = st.number_input('Difficulty', value = 3)
-    with col3:
-        frame = st.number_input('Lim Frames', value = 30)
-    with col4:
-        IfSubp = st.checkbox('Subpixel')
-st.write(st.session_state.result)
-
+		
 
 images = {
     'Spike': Image.open(BASE / 'Anims' / gamemode / 'Any' / 'Spike.png').resize((80, 80), Image.Resampling.NEAREST),
@@ -435,6 +411,29 @@ with col4:
 
 if st.button('Describe spike positions'):
     st.code(st.session_state.spike_pos)
+
+if mode == 'Calculate':
+    ph = 'Example: LeftJump 2 RightJump 4 LeftJump 2' if not st.session_state.IfJXMai else 'Example: 左跳2 右跳4 左跳2'
+    st.text_area(label ='Commands', placeholder = ph, key = 'commands')
+elif mode == 'Find setups':
+    col1, col2, col3, col4 = st.columns(4)
+    st.session_state.commands = ''
+    with col1:
+        tar = st.text_input('Target point')
+        if tar:
+            if st.session_state.hex:
+                try:
+                    tar = str(to32(tar))
+                except ValueError:
+                    st.error('Enter in Correct Format!')
+    with col2:
+        switch = st.number_input('Difficulty', value = 3)
+    with col3:
+        frame = st.number_input('Lim Frames', value = 30)
+    with col4:
+        IfSubp = st.checkbox('Subpixel')
+st.write(st.session_state.result)
+
 
 st.image(st.session_state.background, width = 'content')
 st.write(st.session_state.df)
