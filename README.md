@@ -11,7 +11,7 @@
 
 ### Calculateモード
 * 操作やそのほかの条件を指定し、マリオの座標変化を調べます。針に当たったかどうかの判定も可能です。
-* 可能な操作については、[Commands](https://github.com/HissoriWa/Calculator/blob/main/Commands.txt))を参照。
+* 可能な操作については、[Commands](https://raw.githubusercontent.com/HissoriWa/Calculator/main/Commands.txt)を参照。
 ### Find Setupsモード(実験的)
 * 初期位置と目的地のx座標を指定し、マリオが4種類の地面移動(左右+Y有無)と3種類の減速(立ち、前後しゃがみ)で目的地に到達できる操作を探索します。
 * SubpixelがOnのときはサブピクセルパーフェクト、そうでなければ針の左右と同じ猶予を許します。
