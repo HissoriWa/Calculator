@@ -37,7 +37,7 @@ SubpixelがOnのときはサブピクセルパーフェクト、そうでなけ�
 <dt>Enter in JXMai Format</dt>
 <dd>Onのとき、JXMai氏のCalculatorと同じフォーマットでCommandsの入力が可能です(こちらが追加していない操作は使えません)。</dd>
 <dt>Commands</dt>
-<dd>決められたフォーマットで入力後、Calculateを押すことで結果が表示されます。</dd>
+<dd>決められたフォーマットで入力後、Calculateを押すことで結果が表示されます。[Commands](Commands.txt)を参照。</dd>
 <dt>Calculate!</dt>
 <dd>結果(最終x, y座標・速度と針に当たったかどうか)を表示します。</dd>
 <dt>Spike Positionやその周辺</dt>
