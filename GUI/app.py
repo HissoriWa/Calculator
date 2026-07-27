@@ -433,9 +433,9 @@ if mode == 'Calculate':
         st.session_state.clicked = True
 elif st.button('Search!'):
     try:
-		search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
-	except ValueError:
-		st.error('Enter in Correct Format!')
+        search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
+    except ValueError:
+        st.error('Enter in Correct Format!')
 
 st.image(st.session_state.background, width = 'content')
 st.write(st.session_state.df)
