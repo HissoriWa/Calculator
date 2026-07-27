@@ -146,7 +146,7 @@ def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
     target = tar_point.split()
     sol = Cal.Solution(x, sx, scene, switch_lim, target, frame_lim, IS)
     if sol is not None:
-        st.write(f'{len(sol)} Hit!')
+        st.write(f'{len(sol) + 1} Hit!')
         result = []
         for n, s in enumerate(sol):
             st.write(f'{n}th Solution:')
