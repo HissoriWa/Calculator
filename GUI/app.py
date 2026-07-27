@@ -5,7 +5,6 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import json
-import pyperclip
 
 def loaddata():
     with open(BASE.parent / 'strats.json', 'r') as f:
@@ -434,9 +433,8 @@ with col4:
         st.session_state.ground_pos = str_pos
         pos_input = ''
 
-if st.button('Describe and copy spike positions'):
-    pyperclip.copy(st.session_state.spike_pos)
-    st.write(st.session_state.spike_pos)
+if st.button('Describe spike positions'):
+    st.code(st.session_state.spike_pos)
 
 st.image(st.session_state.background, width = 'content')
 st.write(st.session_state.df)
