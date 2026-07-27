@@ -44,7 +44,8 @@
 **Spike Positionやその周辺**  
   Spike Positionに追加・撤去したい針・地面の座標(x, yの順。画面の白文字が座標)を入力し、Add/Erace Spikes/Groundsを押し、Calculate!を実行するとその地点の針・地面が追加・撤去できます。Erace All...ですべて(Groundsは初期位置除き)消せます。x y x y ...のように同時に複数個の針を指定できます。  
 
->Find Setupsモード  
+>Find Setupsモード
+
 **Target point**  
 目標地点のx座標です。  
 **Difficulty**  
