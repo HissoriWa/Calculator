@@ -146,7 +146,7 @@ def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
     with st.spinner('Searching in Progress...'):
         target = tar_point.split()
         future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
-        sol = future.result
+        sol = future.result()
     if sol is not None:
         st.write(f'{len(sol)} Hit!')
         result = []
