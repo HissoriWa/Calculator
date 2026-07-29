@@ -145,16 +145,17 @@ def grayout(image):
 
 def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
     target = tar_point.split()
+    st.session_state.start = time.time()
     future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
-    if not future.done:
+    while not future.done():
         with st.spinner('Searching in Progress...'):
             time.sleep(5)
-            if time.time() - start > 60:
+            if time.time() - st.session_state.start > 60:
                 st.error('Searched Too Long!')
                 return
-            st.rerun()
     else:
         sol = future.result()
+
     if sol is not None:
         st.write(f'{len(sol)} Hit!')
         result = []
@@ -163,7 +164,6 @@ def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
             for i in s:
                 result.append(Types_search[tuple(i)])
             st.write(format(result))
-            st.write()
 
 def format(command_list):
     t = -1
