@@ -55,7 +55,7 @@
         "scene": "Normal",
         "action": "RightRun 30 AccRightJump 20 AccLeftJump 26 "
     },
-    "2-Block SideTJ": {
+    "2-Block SideJump": {
         "pos_x": "0",
         "spd_x": "0.0",
         "pos_y": "32.0",
