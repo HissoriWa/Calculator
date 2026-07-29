@@ -55,3 +55,8 @@
   方向キーを押しているフレーム数の最大です。大きいほど処理が重くなります。  
 **Search!**  
   探索を実行します。処理能力が低いため、動かなくなることが多いです。  
+
+## Contact
+下記のいずれかにご連絡ください。反応まで時間のかかる可能性があります。
+* [Twitter](https://x.com/suugaku_tanoshi)
+* [Discord](https://discord.com/users/wagacourse)
