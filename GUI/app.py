@@ -5,7 +5,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import json
-from  concurrent.futures import ThreadPoolExecutor
+from  concurrent.futures import ProcessPoolExecutor
 import time
 
 def loaddata():
@@ -145,25 +145,9 @@ def grayout(image):
 
 def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
     target = tar_point.split()
-    future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
-    if not future.done:
-        with st.spinner('Searching in Progress...'):
-            time.sleep(5)
-            if time.time() - start > 60:
-                st.error('Searched Too Long!')
-                return
-            st.rerun()
-    else:
-        sol = future.result()
-    if sol is not None:
-        st.write(f'{len(sol)} Hit!')
-        result = []
-        for n, s in enumerate(sol):
-            st.write(f'{n+1}th Solution:')
-            for i in s:
-                result.append(Types_search[tuple(i)])
-            st.write(format(result))
-            st.write()
+    st.session_state.future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
+    st.session_state.stime = time.time()
+    st.rerun()
 
 def format(command_list):
     t = -1
@@ -201,12 +185,16 @@ def sync():
         except ValueError:
             st.session_state[k] = to32(st.session_state[_k])
 
+@st.cache_resource
+def get_executer():
+    return ProcessPoolExecutor(max_workers=1)
+
 parent_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_dir))
 import Calculator.CalCalculate as Cal
 import Calculator.ChangeCode as CC
 
-executer = ThreadPoolExecutor(max_workers=1)
+executer = get_executer()
 
 BASE = Path(__file__).resolve().parent
 if 'clicked' not in st.session_state:
@@ -251,6 +239,8 @@ if 'result' not in st.session_state:
     st.session_state.result = f'X pos: {st.session_state.pos_x} X spd: {st.session_state.spd_x} Y pos: {st.session_state.pos_y} Y spd: {st.session_state.spd_y}, Dead: {st.session_state.dead}'
 if 'IfJXMai' not in st.session_state:
     st.session_state.IfJXMai = False 
+if 'future' not in st.session_state:
+    st.session_state.future = None
 
 
 #1: midair, 2: ground, 3: duck
@@ -416,6 +406,30 @@ with col3:
     if st.button('Erace All Spikes'):
         st.session_state.spike_pos = ''
         pos_input = ''
+
+if st.session_state.future is not None:
+    if not st.session_state.future.done():
+        with st.spinner('Searching in Progress...'):
+            if st.session_state.start - time.time() > 60:
+                st.error('Searched Too Long!')
+                del st.session_state.future
+                del st.session_state.stime
+            else:
+                time.sleep(5)
+                st.rerun()
+    else:
+        sol = st.session_state.future.result()
+    if sol is not None:
+        st.write(f'{len(sol)} Hit!')
+        result = []
+        for n, s in enumerate(sol):
+            st.write(f'{n+1}th Solution:')
+            for i in s:
+                result.append(Types_search[tuple(i)])
+            st.write(format(result))
+            st.write()
+            del st.session_state.future
+            del st.session_state.stime
 
 with col4:
     if st.button('Add Grounds'):
