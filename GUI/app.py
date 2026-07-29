@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import json
 from  concurrent.futures import ThreadPoolExecutor
+import time
 
 def loaddata():
     with open(BASE.parent / 'strats.json', 'r') as f:
@@ -143,9 +144,13 @@ def grayout(image):
     return Image.merge('RGBA', (zero_channel, zero_channel, b, a))
 
 def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
-    with st.spinner('Searching in Progress...'):
-        target = tar_point.split()
-        future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
+    target = tar_point.split()
+    future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
+    if not future.done:
+        with st.spinner('Searching in Progress...'):
+            time.sleep(5)
+            st.rerun()
+    else:
         sol = future.result()
     if sol is not None:
         st.write(f'{len(sol)} Hit!')
