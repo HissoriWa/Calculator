@@ -96,10 +96,11 @@ def load_callback():
     except (ValueError, IndexError):
         st.error('Not Saved In Correct Format!')
         return
-    st.session_state._pos_x = data['pos_x']
-    st.session_state._spd_x = data['spd_x']
-    st.session_state._pos_y = data['pos_y']
-    st.session_state._spd_y = data['spd_y']
+
+    st.session_state._pos_x = data['pos_x'] if not st.session_state.hex else tohex(data['pos_x'])
+    st.session_state._spd_x = data['spd_x'] if not st.session_state.hex else tohex(data['spd_x'])
+    st.session_state._pos_y = data['pos_y'] if not st.session_state.hex else tohex(data['pos_y'])
+    st.session_state._spd_y = data['spd_y'] if not st.session_state.hex else tohex(data['spd_y'])
     st.session_state.scene = data['scene']
 
     sync()
