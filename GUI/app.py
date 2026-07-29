@@ -92,16 +92,17 @@ def describe():
 def load_callback():
     chosen = st.session_state.chosen
     data = strats_data[chosen]
+    hex = st.session_state.hex
 
     try:
         st.session_state.commands = data['action'] if not st.session_state.IfJXMai else  CC.WtoJ(data['action'])
     except (ValueError, IndexError):
         st.error('Not Saved In Correct Format!')
         return
-    st.session_state._pos_x = data['pos_x']
-    st.session_state._spd_x = data['spd_x']
-    st.session_state._pos_y = data['pos_y']
-    st.session_state._spd_y = data['spd_y']
+    st.session_state._pos_x = data['pos_x'] if not hex else tohex(data['pos_x'])
+    st.session_state._spd_x = data['spd_x'] if not hex else tohex(data['spd_x'])
+    st.session_state._pos_y = data['pos_y'] if not hex else tohex(data['pos_y'])
+    st.session_state._spd_y = data['spd_y'] if not hex else tohex(data['spd_x'])
     st.session_state.scene = data['scene']
 
     sync()
