@@ -5,6 +5,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import json
+from  concurrent.futures import ThreadPoolExecutor
 
 def loaddata():
     with open(BASE.parent / 'strats.json', 'r') as f:
@@ -96,11 +97,10 @@ def load_callback():
     except (ValueError, IndexError):
         st.error('Not Saved In Correct Format!')
         return
-
-    st.session_state._pos_x = data['pos_x'] if not st.session_state.hex else tohex(data['pos_x'])
-    st.session_state._spd_x = data['spd_x'] if not st.session_state.hex else tohex(data['spd_x'])
-    st.session_state._pos_y = data['pos_y'] if not st.session_state.hex else tohex(data['pos_y'])
-    st.session_state._spd_y = data['spd_y'] if not st.session_state.hex else tohex(data['spd_y'])
+    st.session_state._pos_x = data['pos_x']
+    st.session_state._spd_x = data['spd_x']
+    st.session_state._pos_y = data['pos_y']
+    st.session_state._spd_y = data['spd_y']
     st.session_state.scene = data['scene']
 
     sync()
@@ -143,8 +143,10 @@ def grayout(image):
     return Image.merge('RGBA', (zero_channel, zero_channel, b, a))
 
 def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
-    target = tar_point.split()
-    sol = Cal.Solution(x, sx, scene, switch_lim, target, frame_lim, IS)
+    with st.spinner('Searching in Progress...'):
+        target = tar_point.split()
+        future = executer.submit(Cal.Solution, x, sx, scene, switch_lim, target, frame_lim, IS)
+        sol = future.result
     if sol is not None:
         st.write(f'{len(sol)} Hit!')
         result = []
@@ -195,6 +197,8 @@ parent_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_dir))
 import Calculator.CalCalculate as Cal
 import Calculator.ChangeCode as CC
+
+executer = ThreadPoolExecutor(max_workers=1)
 
 BASE = Path(__file__).resolve().parent
 if 'clicked' not in st.session_state:
@@ -305,7 +309,31 @@ with col2:
         st.button('Load the Setup', on_click = load_callback)
     with col4:
         st.button('Add the Setup', on_click = add_callback, disabled=True)
-		
+
+           
+    
+if mode == 'Calculate':
+    ph = 'Example: LeftJump 2 RightJump 4 LeftJump 2' if not st.session_state.IfJXMai else 'Example: 左跳2 右跳4 左跳2'
+    st.text_area(label ='Commands', placeholder = ph, key = 'commands')
+elif mode == 'Find setups':
+    col1, col2, col3, col4 = st.columns(4)
+    st.session_state.commands = ''
+    with col1:
+        tar = st.text_input('Target point')
+        if tar:
+            if st.session_state.hex:
+                try:
+                    tar = str(to32(tar))
+                except ValueError:
+                    st.error('Enter in Correct Format!')
+    with col2:
+        switch = st.number_input('Difficulty', value = 3)
+    with col3:
+        frame = st.number_input('Lim Frames', value = 30)
+    with col4:
+        IfSubp = st.checkbox('Subpixel')
+st.write(st.session_state.result)
+
 
 images = {
     'Spike': Image.open(BASE / 'Anims' / gamemode / 'Any' / 'Spike.png').resize((80, 80), Image.Resampling.NEAREST),
@@ -346,10 +374,16 @@ charas_gray_half = {
 if st.session_state.background is None:
     describe()
 
-col1, col2, col3 = st.columns([3, 1, 1])
+col1, col2, col3, col4 = st.columns([2, 5, 2, 2])
 with col1:
-    pos_input = st.text_input('Spike Position')
+    if mode == 'Calculate':
+        if st.button('Calculate!', on_click = describe):
+            st.session_state.clicked = True
+    elif st.button('Search!'):
+        search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
 with col2:
+    pos_input = st.text_input('Spike Position')
+with col3:
     if st.button('Add Spikes'):
         spike_arranged = ' '.join(pos_input.split())
         st.session_state.spike_pos += ' ' + pos_input
@@ -375,7 +409,7 @@ with col2:
         st.session_state.spike_pos = ''
         pos_input = ''
 
-with col3:
+with col4:
     if st.button('Add Grounds'):
         ground_arranged = ' '.join(pos_input.split())
         st.session_state.ground_pos += ' ' + pos_input
@@ -406,37 +440,6 @@ with col3:
 
 if st.button('Describe spike positions'):
     st.code(st.session_state.spike_pos)
-
-if mode == 'Calculate':
-    ph = 'Example: LeftJump 2 RightJump 4 LeftJump 2' if not st.session_state.IfJXMai else 'Example: 左跳2 右跳4 左跳2'
-    st.text_area(label ='Commands', placeholder = ph, key = 'commands')
-elif mode == 'Find setups':
-    col1, col2, col3, col4 = st.columns(4)
-    st.session_state.commands = ''
-    with col1:
-        tar = st.text_input('Target point')
-        if tar:
-            if st.session_state.hex:
-                try:
-                    tar = str(to32(tar))
-                except ValueError:
-                    st.error('Enter in Correct Format!')
-    with col2:
-        switch = st.number_input('Difficulty', value = 3)
-    with col3:
-        frame = st.number_input('Lim Frames', value = 30)
-    with col4:
-        IfSubp = st.checkbox('Subpixel')
-st.write(st.session_state.result)
-
-if mode == 'Calculate':
-    if st.button('Calculate!', on_click = describe):
-        st.session_state.clicked = True
-elif st.button('Search!'):
-    try:
-        search(st.session_state.pos_x, st.session_state.spd_x, scene, switch, tar, frame, IfSubp)
-    except ValueError:
-        st.error('Enter in Correct Format!')
 
 st.image(st.session_state.background, width = 'content')
 st.write(st.session_state.df)
