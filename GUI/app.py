@@ -149,7 +149,7 @@ def search(x, sx, scene, switch_lim, tar_point, frame_lim, IS):
     if not future.done:
         with st.spinner('Searching in Progress...'):
             time.sleep(5)
-            if start - time.time() > 60:
+            if time.time() - start > 60:
                 st.error('Searched Too Long!')
                 return
             st.rerun()
