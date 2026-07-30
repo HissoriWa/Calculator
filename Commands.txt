@@ -1,29 +1,29 @@
-(Midair)
-Airbone
-Right
-Left
-AccRight
-AccLeft
+空中で可能な操作
+Airbone: 空中ニュートラル
+Right: Yなし右
+Left: Yなし左
+AccRight: Y右
+AccLeft: Y左
 
-(Midair or Ground)
-Jump
-RightJump
-LeftJump
-AccRightJump
-AccLeftJump
-RightBufferJump
-LeftBufferJump
-AccRightBufferJump
-AccLeftBufferJump
+空中およびで可能な地上操作
+Jump: B
+RightJump: Yなし右B
+LeftJump: Yなし左B
+AccRightJump: Y右B
+AccLeftJump: Y左B
+RightBufferJump: Yなし右バッファー
+LeftBufferJump: Yなし左バッファー
+AccRightBufferJump: Y右バッファー
+AccLeftBufferJump: Y左バッファー
 
-(Ground)
-RightWalk
-LeftWalk
-RightRun
-LeftRun
-Stand
-FrontDuck
-BackDuck
+地上で可能な操作
+RightWalk: Yなし右
+LeftWalk: Yなし左
+RightRun: Y右
+LeftRun: Y左
+Stand: ニュートラル
+FrontDuck: しゃがみ
+BackDuck: しゃがみ（進行方向と反対に入力あり）
 
 (諸注意)
 Command Frame Command Frame...の順で入力してください。例: RightRun 13 FrontDuck 30 LeftRun 1 FrontDuck 10
