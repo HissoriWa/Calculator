@@ -267,7 +267,7 @@ with col1:
 
 strats_data = loaddata()
 
-mode = st.sidebar.selectbox('Mode', ['Calculate', 'Find setups'])
+mode = st.sidebar.selectbox('Mode', ['Calculate'])
 
 
 Ifhex = st.checkbox('Input/Get as hex', on_change = _tohex, key = 'hex')
