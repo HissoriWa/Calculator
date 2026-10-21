@@ -4,4 +4,4 @@ pillow
 streamlit
 pyarrow
 requests
-altair
+altair<5.0
