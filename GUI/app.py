@@ -449,7 +449,7 @@ with col4:
 if st.button('Describe spike positions'):
     st.code(st.session_state.spike_pos)
 
-st.image(st.session_state.background, width = 'content')
+st.image(st.session_state.background)
 st.write(st.session_state.df)
 
 
