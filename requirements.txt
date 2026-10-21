@@ -5,3 +5,4 @@ streamlit
 pyarrow
 requests
 altair<5.0.0
+imghdr-python313
