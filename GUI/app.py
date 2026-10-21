@@ -225,7 +225,7 @@ if 'spd_y' not in st.session_state:
 if 'commands' not in st.session_state:
     st.session_state.commands = ''
 if 'scene' not in st.session_state:
-    st.session_state.scene = 0
+    st.session_state.scene = "Normal"
 if 'ground_pos' not in st.session_state:
     str_pos = ''
     for i in range(7):
