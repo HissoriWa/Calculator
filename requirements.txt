@@ -5,3 +5,4 @@ streamlit
 altair
 pyarrow
 requests
+altair>=5.0.0
