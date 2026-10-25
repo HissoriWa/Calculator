@@ -1,7 +1,7 @@
 numpy
 pandas
 pillow
-streamlit
+streamlit==1.66.1
 pyarrow
 requests
 altair<5.0
